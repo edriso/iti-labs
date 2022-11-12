@@ -94,6 +94,11 @@ textarea {
   margin: 1rem 0 2.5rem;
 }
 
+.road-map ol,
+.road-map ul {
+  padding-left: 2rem;
+}
+
 .road-map__categories-container {
   display: flex;
   justify-content: space-between;
