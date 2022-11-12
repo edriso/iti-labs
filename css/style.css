@@ -2,6 +2,7 @@
 :root {
   --red-color: #fe0707;
   --primary-color: #a4262a;
+  --lt-primary-color: #ff3a41;
   --secondary-color: #55917a;
   --lt-secondary-color: #e0f0e8;
 }
@@ -77,7 +78,7 @@ textarea {
 }
 
 #main-header a:hover {
-  color: var(--red-color);
+  color: var(--lt-primary-color);
 }
 
 #main-header img {
