@@ -73,6 +73,11 @@ textarea {
 #main-header a {
   color: #fff;
   text-decoration: none;
+  transition: color 350ms ease-in-out;
+}
+
+#main-header a:hover {
+  color: var(--red-color);
 }
 
 #main-header img {
