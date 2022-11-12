@@ -75,6 +75,10 @@ textarea {
   text-decoration: none;
 }
 
+#main-header img {
+  width: 200px;
+}
+
 /* Road map */
 .road-map {
   padding: 0.5rem;
