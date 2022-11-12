@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Registration</title>
+  </head>
+  <body>
+    <header id="main-header">
+      <ul>
+        <li>
+          <a href="../index.html">Home</a>
+        </li>
+
+        <li><a href="./roadMap.html">Road Map</a></li>
+        <li><a href="./registration.html">Registration Form</a></li>
+        <li><a href="https://www.iti.gov.eg/" target="_blank">Contact</a></li>
+      </ul>
+
+      <img src="./images/ITI_logo.png" alt="iti logo" height="80px" />
+    </header>
+
+    <main class="registration">
+      <h3 class="text-secondary">Register - Create Account</h3>
+
+      <p class="bg-secondary my-md">
+        Fields marked with <span class="text-required">*</span> are compulsory
+        fields
+      </p>
+
+      <form action="#" method="post">
+        <div class="registration__form-group">
+          <div class="bg-secondary">
+            <label> <span class="text-required">*</span>Your Name </label>
+          </div>
+
+          <div>
+            <input type="text" name="name" required />
+          </div>
+        </div>
+
+        <div class="registration__form-group">
+          <div class="bg-secondary">
+            <label> <span class="text-required">*</span>E-Mail ID </label>
+          </div>
+
+          <div>
+            <input class="w-90" type="email" name="email" required />
+          </div>
+        </div>
+
+        <div class="registration__form-group">
+          <div class="bg-secondary">
+            <label>Alternate E-Mail ID </label>
+          </div>
+
+          <div>
+            <input class="w-90" type="email" name="alt-email" />
+          </div>
+        </div>
+
+        <div class="registration__form-group">
+          <div class="bg-secondary">
+            <label>Your Phone </label>
+          </div>
+
+          <div class="registration__form-group__country-grid">
+            <p>Country Code - City Code - Phone Number</p>
+            <!-- <div> -->
+            <input type="text" name="country-code" />
+            <span>-</span>
+            <!-- </div> -->
+
+            <!-- <div> -->
+            <input type="text" name="city-code" />
+            <span>-</span>
+            <!-- </div> -->
+
+            <div>
+              <input type="text" name="phone-number" />
+            </div>
+          </div>
+        </div>
+
+        <div class="registration__form-group">
+          <div class="bg-secondary">
+            <label>Mobile Phone </label>
+          </div>
+
+          <div>
+            <input type="text" name="mobile" />
+          </div>
+        </div>
+
+        <div class="registration__form-group">
+          <div class="bg-secondary">
+            <label>
+              <span class="text-required">*</span>Your Postal Address</label
+            >
+          </div>
+
+          <div>
+            <textarea name="postal-address" cols="40" rows="5"></textarea>
+          </div>
+        </div>
+
+        <div class="registration__form-group">
+          <div class="bg-secondary">
+            <label> <span class="text-required">*</span>Country </label>
+          </div>
+
+          <div>
+            <select name="country" required>
+              <option disabled selected>------- Select One -------</option>
+              <option value="Egypt">Egypt</option>
+              <option value="Japan">Japan</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="registration__form-group">
+          <div class="bg-secondary">
+            <label> <span class="text-required">*</span>Password </label>
+          </div>
+
+          <div>
+            <input type="password" name="password" required />
+          </div>
+        </div>
+
+        <div class="registration__form-group">
+          <div class="bg-secondary">
+            <label>
+              <span class="text-required">*</span>Re-Enter Password
+            </label>
+          </div>
+
+          <div>
+            <input type="password" name="confirm-password" required />
+          </div>
+        </div>
+
+        <div class="registration__form-group">
+          <div></div>
+
+          <div>
+            <div class="my-sm">
+              <input type="checkbox" name="terms" />
+              <small class="text-secondary"
+                >I Accept the <a href="#">Terms of Use</a></small
+              >
+            </div>
+
+            <div>
+              <input type="submit" value="Continue >>" />
+              <input type="button" value="Reset" />
+            </div>
+          </div>
+        </div>
+      </form>
+    </main>
+
+    <footer id="main-footer">
+      <hr />
+
+      <h4>Copyright &copy; 2022 by Noha Salah &reg; All Right Reserved.</h4>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,163 @@
+/* Base */
+:root {
+  --red-color: #fe0707;
+  --primary-color: #a4262a;
+  --secondary-color: #55917a;
+  --lt-secondary-color: #e0f0e8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: none;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.w-90 {
+  width: 90%;
+}
+
+input,
+textarea {
+  border: 1px solid var(--secondary-color);
+}
+
+.text-primary {
+  color: var(--primary-color);
+}
+
+.text-required {
+  color: var(--red-color);
+}
+
+.text-secondary {
+  color: var(--secondary-color);
+}
+
+.bg-secondary {
+  background-color: var(--lt-secondary-color);
+}
+
+.my-md {
+  margin: 1rem 0;
+}
+
+.my-sm {
+  margin: 0.5rem 0;
+}
+
+/* Header */
+#main-header {
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#main-header ul {
+  padding-left: 0;
+}
+
+#main-header li {
+  display: inline-block;
+  margin-left: 1.5rem;
+}
+
+#main-header a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Road map */
+.road-map {
+  padding: 0.5rem;
+}
+
+.road-map h1 {
+  margin: 1rem 0 2.5rem;
+}
+
+.road-map__categories-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.road-map__categories-container section {
+  flex: 0 1 50%;
+}
+
+/* Registration */
+.registration {
+  max-width: 700px;
+  margin: 0.5rem auto 0;
+  padding: 0.75rem;
+  border: 4px solid var(--lt-secondary-color);
+}
+
+.registration > p:first-of-type {
+  padding: 0.5rem;
+  border: 2px dashed var(--secondary-color);
+}
+
+.registration__form-group {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.registration__form-group > div:first-child {
+  flex: 0 0 30%;
+  text-align: right;
+  padding: 0.5rem;
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+}
+
+.registration__form-group > div:last-child {
+  flex: 1;
+}
+
+.registration__form-group input[type="submit"],
+.registration__form-group input[type="button"] {
+  padding: 0.25rem 0.5rem;
+}
+
+.registration__form-group__country-grid {
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+  display: grid;
+  grid-template-columns: 80px 10px 80px 10px 1fr;
+}
+
+.registration__form-group__country-grid p {
+  grid-column: 1/-1;
+}
+
+/* Footer */
+#main-footer {
+  text-align: center;
+  padding-bottom: 0.75rem;
+}
+
+#main-footer p {
+  margin-top: 0.75rem;
+}
+
+#main-footer hr {
+  margin: 0.75rem 0;
+}
+
+#main-footer h4 {
+  color: #194583;
+}
