@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS lab2</title>
+  </head>
+  <body>
+    <div>
+      <a href="/index3.html">Reload Page</a>
+    </div>
+
+    <script type="text/javascript">
+      //  Write a JavaScript program to convert the 24-hour clock to 12,
+      // adding am or pm based on its value.
+      //  Examples:
+      //   0 -> 12AM
+      //   11 -> 11AM
+      //   13 -> 1PM
+
+      function convertHour(h) {
+        let converted = "";
+        let hour = Number(h);
+
+        if (!(h == null || h == "")) {
+          if (hour > 0 && hour < 12) {
+            converted = hour + " AM";
+          } else if (hour === 0 || hour == 24) {
+            converted = 12 + " AM";
+          } else if (hour === 12) {
+            converted = 12 + " PM";
+          } else if (hour <= 24) {
+            converted = hour - 12 + " PM";
+          }
+
+          document.write(`Converted value is: ${converted}`);
+        }
+
+        console.log(h);
+      }
+
+      const userInput = prompt("Enter a 24-hour value!", 11);
+      convertHour(userInput);
+    </script>
+  </body>
+</html>

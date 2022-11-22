@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS lab2</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      //  Ask the user to enter his age. You must validate the user input (positive numbers only)
+      //  Show the status of the user knowing that
+      //  Child is between 1-10
+      //  Teenager is between 11-18
+      //  Grown up is between 19-50
+      //  Old is greater than 50
+      //  keep asking the user to enter another age until he clicks cancel
+
+      let cancelClicked = false;
+
+      function getAge() {
+        let age = prompt("Enter your age in Numbers!");
+
+        if (age == null) {
+          cancelClicked = true;
+        } else if (age > 0) {
+          age = Number(age);
+
+          switch (true) {
+            // case age > 50:
+            //   document.write("You're an Old person!");
+            //   break;
+            // case age >= 19:
+            //   document.write("You're a Grown up person!");
+            //   break;
+            // case age > 10:
+            //   document.write("You're a Teenager!");
+            //   break;
+            // default:
+            //   document.write("You're a Child!");
+
+            case age >= 1 && age <= 10:
+              document.write("You're a Child!");
+              break;
+            case age > 10 && age < 19:
+              document.write("You're a Teenager!");
+              break;
+            case age >= 19 && age < 51:
+              document.write("You're a Grown up person!");
+              break;
+            default:
+              document.write("You're an Old person!");
+          }
+        }
+
+        // console.log(age);
+        // console.log(cancelClicked);
+      }
+
+      do {
+        getAge();
+      } while (!cancelClicked);
+    </script>
+  </body>
+</html>

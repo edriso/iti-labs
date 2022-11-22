@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS lab2</title>
+  </head>
+  <body>
+    <input type="text" id="inputText" />
+
+    <p id="showResult"></p>
+
+    <script type="text/javascript">
+      const inputText = document.getElementById("inputText");
+      const showResult = document.getElementById("showResult");
+
+      // Ask the user to enter a string
+      // Count the number of vowels in that string (a,e,o,u,i)
+
+      function countVowels(word) {
+        let str = word.toLowerCase();
+        let count = 0;
+
+        for (let i = 0; i < str.length; i++) {
+          if (
+            str[i] === "a" ||
+            str[i] === "e" ||
+            str[i] === "o" ||
+            str[i] === "u" ||
+            str[i] === "i"
+          ) {
+            count++;
+          }
+        }
+
+        console.log(inputText.value);
+        showResult.innerText = `${count} vowels found in the word "${word}"`;
+      }
+
+      inputText.addEventListener("keyup", () => countVowels(inputText.value));
+    </script>
+  </body>
+</html>
