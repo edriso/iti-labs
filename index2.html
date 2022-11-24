@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS lab 3</title>
+    <style>
+      .hide {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h2>Calculate Sum & Average</h2>
+
+      <form action="#">
+        <label for="num">Enter a number</label>
+        <input
+          type="number"
+          id="num"
+          placeholder="how many number you want to get the sum of?"
+        />
+      </form>
+
+      <p id="numCalc"></p>
+    </div>
+
+    <hr />
+
+    <input
+      type="text"
+      name="searchadd"
+      id="search-add"
+      placeholder="Search or Add"
+    />
+
+    <div id="add-container" class="hide">
+      <h3>add a new contact</h3>
+
+      <form action="#" id="contactForm">
+        <input type="text" id="name" placeholder="enter name" />
+        <input type="text" id="phone" placeholder="enter phone number" />
+
+        <input type="submit" value="Add" id="submit" />
+      </form>
+    </div>
+
+    <br />
+
+    <div id="search-container" class="hide">
+      <h3>search contact</h3>
+
+      <input type="text" id="search" placeholder="Search contact" />
+
+      <ul id="searchedContactsList"></ul>
+    </div>
+
+    <script type="text/javascript">
+      const num = document.getElementById("num");
+      const numCalc = document.getElementById("numCalc");
+
+      num.addEventListener("change", (e) => {
+        const val = Number(e.target.value);
+        let sum = 0;
+        // let numArr = [];
+
+        if (val > 0) {
+          for (let i = val; i >= 1; i--) {
+            sum += i;
+            // numArr.push(i);
+          }
+        }
+        const avg = sum / val;
+
+        // let sum = 0;
+        // numArr.forEach((elm) => (sum += elm));
+        // const avg = sum / numArr.length;
+
+        numCalc.innerHTML = `Sum of number ${val} is: <b>${sum}</b>, and the average is <b>${avg}</b>.`;
+      });
+
+      // Part 2
+      const name = document.getElementById("name");
+      const phone = document.getElementById("phone");
+      const submit = document.getElementById("submit");
+      const contactForm = document.getElementById("contactForm");
+      const search = document.getElementById("search");
+      const searchedContactsList = document.getElementById(
+        "searchedContactsList"
+      );
+      const searchAdd = document.getElementById("search-add");
+      const searchContainer = document.getElementById("search-container");
+      const addContainer = document.getElementById("add-container");
+
+      let contactsArr = [];
+
+      searchAdd.addEventListener("keyup", () => {
+        const val = searchAdd.value.toLowerCase();
+
+        if (val === "add") {
+          addContainer.classList.toggle("hide");
+        } else if (val === "search") {
+          searchContainer.classList.toggle("hide");
+        } else {
+          addContainer.classList.add("hide");
+          searchContainer.classList.add("hide");
+        }
+      });
+
+      submit.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        if (name.value && phone.value) {
+          const newContact = {
+            name: name.value,
+            phone: phone.value,
+          };
+
+          contactsArr = [...contactsArr, newContact];
+        }
+      });
+
+      search.addEventListener("keyup", () => {
+        const searchVal = search.value;
+
+        let searchedResult = [];
+
+        if (searchVal) {
+          searchedResult = contactsArr.map((item) => {
+            if (
+              item.name.includes(searchVal) ||
+              item.phone.includes(searchVal)
+            ) {
+              return item;
+            }
+          });
+        }
+
+        let searchedContactsOutput = "";
+
+        if (searchedResult.length) {
+          searchedResult.forEach((contact) => {
+            let item = `<li><h4>${contact.name}</h4><p>${contact.phone}<p></li>`;
+
+            searchedContactsOutput += item;
+          });
+        }
+
+        searchedContactsList.innerHTML = searchedContactsOutput;
+      });
+    </script>
+  </body>
+</html>
