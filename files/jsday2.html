@@ -1,0 +1,1034 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+    // Array
+    // --------------------------
+    // const arr = new Array();
+    // console.log(arr);
+    // const arr2 = [];
+    // console.log(arr2);
+    // const numbers = [1, 2, 3, 4];
+    // const colors = ["red", "blue", "black"];
+    // // console.log(numbers);
+    // // console.log(colors);
+    // const mixTypesArr = [1, "red", "blue", 2, [3, 4]];
+    // // console.log(mixTypesArr);
+    // // colors.push("yellow", "pink");
+    // console.log(colors);
+    // // colors.unshift("green")
+    // // // console.log(colors);
+    // // // console.log(colors.length);
+    // // // console.log(colors[colors.length -1]);
+    // // // console.log(colors[1000]);
+    // // colors.pop()
+    // // colors.shift();
+    // // console.log(colors);
+    //
+    // const removedEl = colors.shift();
+    // console.log(removedEl);
+    // // console.log(colors);
+    // // const newArrLength = colors.unshift("pink");
+    // // console.log(newArrLength);
+    // // console.log(colors);
+    //----------------------------------------------------
+    //object
+    // var book = {
+    //     "name": "Harry Potter and the Goblet of Fire",
+    //     "author": "J. K. Rowling",
+    //     year: 2000
+    // };
+//     // Dot notation
+//     document.write(book.author);  // Prints: J. K. Rowling
+//     // Bracket notation
+//     document.write(book["year"]); // Prints: 2000
+//
+
+// var book = {
+//     name: "Harry Potter and the Goblet of Fire",
+//     author: "J. K. Rowling",
+//     "publication date": "8 July 2000"
+// };
+// // // Bracket notation
+// document.write(book["publication date"]); // Prints: 8 July
+// 2000
+
+// var person = {
+//     name: "Peter",
+//     age: 28,
+//     gender: "Male"
+// };
+// var key = prompt("Enter any property name to get its value");
+// alert(person[key]); // Outputs: Peter (if enter "name")
+
+// var person = {
+//   name: "Peter",
+//   age: 28,
+//   gender: "Male"
+// };
+// // // Setting a new property
+// console.log(person);
+// person.country = "United States";
+// // document.write(person.country); // Prints: United States
+// person["email"] = "peterparker@mail.com";
+// // document.write(person.email); // Prints:
+// // peterparker@mail.com
+// // // Updating existing property
+// person.age = 30;
+// console.log(person);
+// // document.write(person.age); // Prints: 30
+// person["name"] = "Peter Parker";
+// console.log(person);
+// document.write(person.name); // Prints: Peter Parker
+//
+
+// var person = {
+//     name: "Peter",
+//     age: 28,
+//     gender: "Male",
+//     displayName: function() {
+//         alert(this.name);
+//     }
+// };
+// var person = {
+//   name: "Peter",
+//   age: 28,
+//   gender: "Male"
+// };
+// // // Deleting property
+// delete person.age;
+// console.log(person);
+// alert(person.age);
+
+
+//After function
+// var person = {
+//     name: "Peter",
+//     age: 28,
+//     gender: "Male",
+//     displayName: function() {
+//         alert(this.name);
+//     }
+// };
+// person.displayName(); // Outputs: Peter
+// person["displayName"](); // Outputs: Peter
+
+
+
+
+// value Vs ref
+// var message = "Hello World!";
+// var greet = message; // Assign message variable to a new
+// // variable
+// greet = "Hi, there!";
+// document.write(message);  // Prints: Hello World!
+// document.write(greet);  // Prints: Hi, there!
+
+
+// var person = {
+//     name: "Peter",
+//     age: 28,
+//     gender: "Male"
+// };
+// var user = person; // Assign person variable to a new
+// // variable
+// user.name = "Harry";
+// document.write(person.name);  // Prints: Harry
+// document.write(user.name);  // Prints: Harry
+
+//     // let user = new Object();
+//     // let user2 = {};
+//
+//     // let user = {
+//     //   name: "Ali",
+    //   age: 20,
+    //   "likes birds": true,
+    // };
+    // const likesBirdsKey = "likes birds";
+    // console.log(user[likesBirdsKey]);
+    // console.log(user);
+    // console.log(user.name);
+    // console.log(user.age);
+    // user.isAdmin = true;
+    // console.log(user);
+    // delete user.age;
+    // console.log(user);
+
+    // let user = {
+    //   name: "Iman",
+    //   age: 65,
+    //   //   userNameKey: '',
+    //   return: 5
+    // };
+
+    // // user.e-mail = '';
+    // user["e-mail"] = "Iman@email.com";
+    // console.log(user);
+    // console.log(user["e-mail"]);
+    // console.log(user["age"]);
+
+    // const userNameKey = "name";
+    // console.log(user[userNameKey]); // user["name"]
+    // console.log(user.userNameKey); // undefined
+    // console.log(user.return);
+    // --------------------------
+
+    // const user = {
+    //   name: "Ali",
+    //   age: 10,
+    // };
+
+    // user.name = "ahmed";
+    // user.id = 1;
+    // // user = user;
+    // // user = {};
+    // let user2 = {};
+    // Object.assign(user2, user);
+
+    // let user3 = Object.assign({city: 'Alex'}, user2);
+
+    // user2.age = 50;
+    // user3.age = 70;
+    // console.log("user: ", user);
+    // console.log("user2: ", user2);
+    // console.log("user3: ", user3);
+    // // user2 = 1;
+
+    // const keys = Object.keys({});
+    // console.log(keys);
+
+    // const user = {
+    //   name: "Ali",
+    //   age: 10,
+    // };
+    // user.address = {
+    //   city: "Alex",
+    // };
+    // const user2 = { city: "Alex" };
+
+    // Object.assign(user2, user);
+
+    // console.log(user2);
+
+    // let user = {
+    //   name: 'ahmed',
+    //   age: 40
+    // }
+    // let clone = Object.assign({}, user)
+    // console.log(clone);
+
+    // let user = {
+    //   name: 'iti'
+    // }
+    // let perm = {canView: true}
+    // let perm2 = {canEdit: true}
+    // Object.assign(user, perm, perm2)
+    // console.log(user);
+    // symbol
+
+    // Symbol type
+    // Doom Element ->
+    // let id1 = Symbol("id");
+    // let id2 = Symbol("id");
+    //
+    // // console.log(id1 == id2);
+    // // console.log(id1);
+    // // console.log(id1.description);
+    // const ageKey = "age";
+    //
+    // let user = {
+    //   [id1]: "Secret value",
+    //   [ageKey]: 20,
+    //   name: "ali",
+    // };
+    //
+    // console.log(user[id1]);
+    // console.log(user.id1);
+    // console.log(user[id1]);
+
+    // let symbols = Object.getOwnPropertySymbols(user);
+    // console.log(user[symbols[0]]);
+
+// loops
+// let i = 0;
+// while (i < 3) {
+//   console.log(i);
+//   i++;
+// }
+// var i = 3
+// do {
+//   console.log(i);
+//   i++;
+// } while (i < 3);
+
+//
+// for (begin; condition; step){
+// loop body
+// }
+
+// for (let i = 0; i <= 3; i++) {
+//   console.log(i);
+// }
+// console.log(i); // Uncaught ReferenceError: i is not defined
+//
+// let i = 0;
+// for (; i < 3; i++) {
+//   console.log(i);
+// }
+// console.log(i); // 3
+
+// let i = 0;
+// for (; i < 3;) {
+//   console.log(i);
+//   i++;
+// }
+// console.log(i); // 3
+//
+// let i = 0;
+// for (;;) {
+//   console.log(i);
+//   i++;
+//   if (i >= 3) {
+//     break;
+//   }
+// }
+// console.log(i); // 3
+
+// let i;
+// for (i = 0; i < 3; i++) {
+//   console.log(i);
+// }
+// console.log(i); // 3
+
+// const arr = ['a', 'b', 'c','d'];
+//
+// for(let i = 0; i < arr.length ; i++){
+//     console.log(arr[i]);
+// }
+
+// let user = {
+//   name: "Ali",
+//   age: 20,
+// };
+//
+// let userKeys = Object.keys(user);
+// // console.log(userKeys);
+// for (let i = 0; i < userKeys.length; i++) {
+//       console.log(user[userKeys[i]]);
+//   // console.log(userKeys[i]);
+// //   console.log(`${userKeys[i]} : ${user[userKeys[i]]} `);
+// }
+// user = ['ah', 'iti']
+// for (const prop in user)
+// {
+//   console.log(user[prop]);
+// }
+// for (const prop in user){
+//     console.log(`${prop} : ${user[prop]}`);
+// }
+
+// const arr = [1, 2, 3, 4];
+
+// for (let i = 0; i < arr.length; i++) {
+//     console.log('Before continue', arr[i]);
+//   if (arr[i] === 2) continue;
+//   console.log(arr[i]);
+// }
+
+// for (const value of arr) {
+//     console.log(value);
+// }
+// var arr = ['a', 'b', 'c']
+// for (let letter of userKeys){
+//   console.log(user[letter]);
+// }
+// another examples
+//
+/*
+
+
+var sum = Number(prompt("enter number"));
+sum = sum + Number(prompt("enter number"));
+sum = sum + Number(prompt("enter number"));
+sum = sum + Number(prompt("enter number"));
+sum = sum + Number(prompt("enter number"));
+sum = sum + Number(prompt("enter number"));
+sum = sum + Number(prompt("enter number"));
+sum = sum + Number(prompt("enter number"));
+sum = sum + Number(prompt("enter number"));
+sum = sum + Number(prompt("enter number"));
+*/
+
+//  var sum =0;
+// var count = Number(prompt("enter numbers count "));
+// for(var i=0;i<count;i++){
+//     sum += Number(prompt("enter number "+(i+1)));
+// }
+// alert(sum);
+
+/*var stop = false;
+var sum = 0;
+while(!stop){
+    sum = sum + Number(prompt("enter number "));
+    var answer = prompt("do you want to exit (yes,no)");
+    if(answer=="yes"){
+        stop = true;
+    }
+}
+
+alert(sum)
+*/
+
+/*
+var stop = false;
+var sum = 0;
+do{
+    sum = sum + Number(prompt("enter number "));
+    var answer = prompt("do you want to exit (yes,no)");
+    if(answer=="yes"){
+        stop = true;
+    }
+}while(!stop)
+alert(sum);
+*/
+
+//break; continue;
+
+
+
+
+/*
+var stop = false;
+var sum = 0;
+do{
+    sum = sum + Number(prompt("enter number "));
+    var answer = prompt("do you want to exit (yes,no)");
+    if(answer=="yes"){
+        break;
+    }
+}while(true)
+alert(sum);
+*/
+
+
+// /*
+// var sum =0;
+// var count = Number(prompt("enter numbers count "));
+// for(var i=0;i<count;i++){
+//
+//     var enteredNumber = Number(prompt("enter number "+(i+1)));
+//     if(enteredNumber<0)
+//         continue;
+//
+//     sum = sum + enteredNumber;
+//
+// }
+//
+//
+//
+// alert(sum);
+
+
+/*
+var sum = 0;
+for(var i =1;i<=100;i++){
+    if(i%2==1)
+        continue;
+
+    sum +=i;
+}
+alert(sum);
+*/
+
+//functions
+// declaration -> function (keyword), name of function , (parameters, delimited, by, comma)
+// function namOfFunction(){// code to be executed}
+// function sayHello(){
+//   console.log('Hello, to this website.');
+// }
+// //
+// sayHello();
+// sayHello();
+// sayHello();
+
+//Adding Parameters to Functions
+
+// function functionName(param1, param2, param3){
+//   // code to be executed
+// }
+
+
+// function displaySum(num1, num2){
+//   var total = num1 + num2;
+//   console.log(total);
+// }
+// displaySum(6, 20);
+// displaySum(-5, 17);
+//
+// //undefined if not pass argument
+// function showFullname(firstName, lastName){
+//   console.log(firstName +' '+ lastName);
+// }
+// showFullname('ITI', 'FullStack');
+// showFullname('ITI');
+
+// ES6 => define default values for function parameters
+// function sayHello(name='FullStack'){
+//   console.log('Hello ' + name);
+// }
+// //
+// sayHello();
+// sayHello('ITI');
+
+// ES6
+// function sayHello(name){
+//   var name = name || 'ITI'
+//   console.log('Hello '+ name);
+// }
+// sayHello();
+// sayHello('FullStack');
+
+// Returning Values from a Function
+// function getSum(num1, num2){
+//   var total = num1 + num2;
+//   return total;
+// }
+//
+// var z = getSum(6, 20)
+// console.log(z);
+
+// console.log(getSum(6, 20));
+// console.log(getSum(-5, 17));
+
+// can not return multi value
+// function divideNumbers(dividend, divisor){
+//   var quotient = dividend / divisor;
+//   var arr = [dividend, divisor, quotient];
+//   return arr;
+// }
+// // // Store returned value in a variable
+// var all = divideNumbers(10, 2);
+// console.log(all);
+// //
+// // // Displaying individual values
+// console.log(all[0]); // 0utputs: 10
+// console.log(all[1]); // 0utputs: 2
+// console.log(all[2]); // 0utputs: 5
+
+// Working with Function Expressions
+// Function Declaration
+// function getSum(num1, num2) {
+//   var total = num1 + num2;
+//   return total;
+// }
+// // Function Expression
+// var getSum = function(num1, num2) {
+//   var total = num1 + num2;
+//   return total;
+// };
+//
+//
+// //
+// var getSum = function(num1, num2) {
+//   var total = num1 + num2;
+//   return total;
+// };
+// // alert(getSum(5, 10)); // 0utputs: 15
+// var sum = getSum(7, 25);
+// alert(sum); // 0utputs: 32
+
+
+// declaration(); // Outputs: Hi, I'm a function declaration!
+// function declaration() {
+//    alert("Hi, I'm a function declaration!");
+// }
+// expression(); // Uncaught TypeError: undefined is not a function
+// var expression = function() {
+//    alert("Hi, I'm a function expression!");
+// };
+
+//Understanding the Variable Scope
+// Defining function
+// function greetWorld() {
+// var greet = "Hello World!";
+//   console.log(greet);
+// }
+// greetWorld(); // Outputs: Hello World!
+// console.log(greet); // Uncaught ReferenceError: greet is not defined
+
+// var greet = "Hello World!";
+// // // Defining function
+// function greetWorld() {
+//   console.log(greet);
+// }
+// greetWorld(); // Outputs: Hello World!
+// console.log(greet); // Outputs: Hello World!
+
+//
+// var userName = 'ITI'
+// function showMessage(){
+//   userName = 'FullStack'
+//   let message = 'Hello, ' + userName;
+//   console.log(message);
+// }
+// console.log(userName);
+// showMessage();
+// console.log(userName);
+
+// local variable
+// function showMessage(from, text){
+//   from = '*' + ': ' + text;
+//   console.log(from + ': '+ text);
+// }
+// let from = 'ITI';
+// showMessage(from, 'Hello');
+// console.log(from);
+
+// var message = 'Hello ITI'
+// function printMessage(){
+//   var message = 'Hello FullStack' // highest pirority
+//   console.log(message);
+// }
+// printMessage();
+// console.log(message);
+// callbacke function
+// function ask(question, yes, no){
+//   // yes = showOk
+//   // no = showCancel
+//   if(confirm(question)) yes()
+//   else no();
+// }
+// //
+// function showOk(){
+//   console.log('You agreed');
+// }
+// function showCancel(){
+//   console.log('You canceled the execution.');
+// }
+// ask('Do you agree?', showOk, showCancel)
+//
+// let x = function(){
+//   console.log(arguments);
+// }
+// x(4, 6, 7)
+
+// Arrow function -> ECM
+
+// function expression
+// let x = function(x, y){
+//   return x * y;
+// }
+// using Arrow
+// let x = (x , y) => x * y;
+
+// syntex
+// let myFunction = (arg1, arg2, ...argN) => expression
+// Arrow function with no arg
+// let greet = () => console.log('Hello');
+// greet()
+
+// arrow function with one agrument
+// let greet = x => console.log(x);
+// greet('Hello')
+// arrow function as an Expression
+// let age = 5;
+// let welcome = (age < 18) ?
+//   () => console.log('Child') :
+//   () => console.log('Adult');
+// welcome()
+
+// multiline in arrow function
+// let sum = (a, b) => {
+//   let result = a + b;
+//   return result
+// }
+// let result1 = sum(5, 7)
+// console.log(result1);
+
+// arguments biniding
+// let y = function(){
+//   console.log(arguments);
+// }
+// y(1, 2, 3, 4)
+//
+// let x = (...n) =>{
+//   console.log(n);
+// }
+// x(1, 2, 3, 4)
+
+//
+//
+// function greet(){
+//   console.log(this);
+// }
+// greet()
+// // //
+// const person = {
+//   name: 'ahmed',
+//   age: 25,
+//   greet(){
+//     console.log(this);
+//   }
+// }
+// person.greet()
+
+// const greet = () =>{
+//   console.log(this);
+// }
+// greet()
+//===== more examples
+
+// function sum(arr){
+//     var res = 0;
+//
+//     for(var i =0;i<arr.length;i++){
+//         res += arr[i];
+//     }
+//
+//     return res;
+// }
+/*
+var sumA = function(arr){
+    var res = 0;
+
+    for(var i =0;i<arr.length;i++){
+        res += arr[i];
+    }
+
+    return res;
+}
+
+
+var myNumbers = [4,8,56,18,8,1,54,8,487,8,54,84,848,8];
+
+
+var res = sumA(myNumbers)
+alert(res);
+*/
+
+
+// var myNumbers = [4,8,56,18,8,1,54,8,487,8,54,84,848,8];
+//
+// var myNumbers2 = [4,8,56,18,33,8,1,54,8,487,8,54,84,848,8];
+
+
+
+/*
+var sumArr1 = 0;
+
+for(var i =0;i<myNumbers.length;i++){
+    sumArr1 = sumArr1 + myNumbers[i];
+}
+
+
+var sumArr2 = 0;
+
+for(var i =0;i<myNumbers2.length;i++){
+    sumArr2 = sumArr2 + myNumbers2[i];
+}
+// */
+
+
+/*
+var sumArr1 = 0;
+
+for(var i =0;i<myNumbers.length;i++){
+    sumArr1 += myNumbers[i];
+}
+
+
+var sumArr2 = 0;
+
+for(var i =0;i<myNumbers2.length;i++){
+    sumArr2 += myNumbers2[i];
+}
+*/
+
+
+// var sumArr1 = sum(myNumbers);
+// //
+// var sumArr2 = sum(myNumbers2);
+// console.log(sumArr1);
+// console.log(sumArr2);
+// function sum(arr){
+//     var res = 0;
+//
+//     for(var i =0;i<arr.length;i++){
+//         res += arr[i];
+//     }
+//
+//     return res;
+// }
+
+
+// var myNumbers = [4,8,56,18,8,1,54,8,487,8,54,84,848,8];
+// //
+// var myNumbers2 = [4,8,56,18,33,8,1,54,8,487,8,54,84,848,8];
+//
+//
+// function sumAndsub(arr, fun){
+//     var res = 0;
+//
+//
+//     for(var i =0;i<arr.length;i++){
+//         res = fun(res,arr[i]);
+//     }
+//
+//     return res;
+// }
+// //
+// //
+// //
+// // // annyno function = function has no name
+// var sumArr1 = sumAndsub(myNumbers, function(total,item){
+//     return total+item;
+// });
+// console.log(sumArr1);
+// //
+// //
+// //
+// //
+// //
+// var sumArr2 = sumAndsub(myNumbers2, function(total, item){
+//     return total-item;
+// });
+// console.log(sumArr2);
+//
+//
+//
+//
+// console.log(sumArr1);
+// console.log(sumArr2);
+
+
+// var myarr = [
+//     function (){
+//         alert("welcome");
+//     },
+//     function (){
+//         alert("hi");
+//     },
+//     function (){
+//         alert("bye");
+//     }
+// ]
+// //
+// myarr.forEach((item, i) => {
+//   item();
+// });
+
+
+// for(let fun in myarr){
+//   console.log(myarr[fun]());
+// }
+// myarr[0]();
+// myarr[1]();
+// myarr[2]();
+
+
+
+/*
+var emp = {
+    name:"ahmed",
+    age:30,
+    salary:3000,
+    showDetails:function(){
+        console.log("Name = "+emp.name+" Age = "+emp.age+" Salary is "+emp.salary);
+    }
+}
+
+
+emp.showDetails();
+emp['showDetails']();
+*/
+
+
+
+
+// function Emp(name,age,salary){
+//     this.name = name;
+//     this.age = age;
+//     this.salary = salary;
+//
+//     this.showDetails = function(){
+//         console.log("Name = "+this.name+" Age = "+this.age+" Salary is "+this.salary);
+//     }
+//
+//
+// }
+// //
+// //
+// //
+// //
+// //
+// var emp1 = new Emp("ahmed",30,3000);
+// emp1.name = "ali";
+// console.log(emp1.name);
+// var emp2 = new Emp("hamada",40,5000);
+// //
+// emp1.showDetails();
+// emp2.showDetails();
+// //
+// //
+// //
+// alert(typeof emp1);
+
+
+
+
+// closure
+
+// let userName = "Ali";
+//
+// function first() {
+//   console.log(`first userName: ${userName}`);
+//   second();
+//   let user = {};
+//   function second() {
+//     console.log(`second userName: ${userName}`);
+//     third();
+//     function third() {
+//       let userName = "Salah";
+//       var age = 20;
+//       console.log(`third userName: ${userName}`);
+//       fourth();
+//       function fourth() {
+//         console.log(`fourth userName: ${userName}`);
+//       }
+//     }
+//   }
+// }
+//
+// first();
+// console.log(userName);
+// console.log(age);
+// userName = "Ahmed";
+// first();
+
+
+
+//phonebook user can add new contact (name,phone) and can search for any contact by name
+
+
+/*
+var contacts = [
+    {
+        name:"ahmed",
+        phone:"123"
+    }
+]
+
+
+function addNewContact(){
+    var newContact = {};
+    newContact.name = prompt("enter contact name");
+    newContact.phone = prompt("enter contact phone");
+    contacts.push(newContact);
+}
+
+function searchForContact(){
+    var searchKeyword = prompt("enter name or phone")
+    for(var i =0;i<contacts.length;i++){
+        var currentContact = contacts[i];
+        if(searchKeyword == currentContact.name || searchKeyword == currentContact.phone){
+            alert("name = "+currentContact.name +" phone = "+currentContact.phone);
+            break;
+        }
+
+    }
+}
+
+
+function runPhoneBook(){
+    var stop = false;
+    do{
+        var op = prompt("what do you want (add,search,exit)");
+        switch(op){
+            case "add":
+                addNewContact();
+            break;
+            case "search":
+                searchForContact();
+
+            break;
+            case "exit":
+                stop = true;
+            break;
+
+        }
+    }while(!stop)
+}
+
+runPhoneBook();
+
+*/
+
+
+// function Contact(name,phone){
+//     this.name=name;
+//     this.phone=phone;
+//     this.showDeatils=function(){
+//         alert("name = "+this.name +" phone = "+this.phone);
+//     }
+// }
+//
+//
+//
+// var phoneBook = {
+//     contacts:[],
+//     addNewContact:function (){
+//         var newContact = new Contact("","");
+//         newContact.name = prompt("enter contact name");
+//         newContact.phone = prompt("enter contact phone");
+//         phoneBook.contacts.push(newContact);
+//     },
+//     searchForContact:function (){
+//         var searchKeyword = prompt("enter name or phone")
+//         for(var i =0;i<phoneBook.contacts.length;i++){
+//             var currentContact = phoneBook.contacts[i];
+//             if(searchKeyword == currentContact.name || searchKeyword == currentContact.phone){
+//                 currentContact.showDeatils();
+//                 break;
+//             }
+//
+//         }
+//     },
+//     run:function (){
+//         var stop = false;
+//         do{
+//             var op = prompt("what do you want (add,search,exit)");
+//             switch(op){
+//                 case "add":
+//                     phoneBook.addNewContact();
+//                 break;
+//                 case "search":
+//                     phoneBook.searchForContact();
+//
+//                 break;
+//                 case "exit":
+//                     stop = true;
+//                 break;
+//
+//             }
+//         }while(!stop)
+//     }
+// }
+//
+//
+// phoneBook.contacts.push(new Contact("ahmed","123"))
+//
+//
+// phoneBook.run();
+
+// ------------------------------------------
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
