@@ -52,7 +52,11 @@
     <div id="search-container" class="hide">
       <h3>search contact</h3>
 
-      <input type="text" id="search" placeholder="Search contact" />
+      <input
+        type="text"
+        id="search"
+        placeholder="Search by name or phone number"
+      />
 
       <ul id="searchedContactsList"></ul>
     </div>
@@ -94,10 +98,8 @@
       const searchContainer = document.getElementById("search-container");
       const addContainer = document.getElementById("add-container");
 
-      let contactsArr = [];
-
-      searchAdd.addEventListener("keyup", () => {
-        const val = searchAdd.value.toLowerCase();
+      searchAdd.addEventListener("keyup", (e) => {
+        const val = e.target.value.toLowerCase();
 
         if (val === "add") {
           addContainer.classList.toggle("hide");
@@ -109,6 +111,8 @@
         }
       });
 
+      let contactsArr = [];
+
       submit.addEventListener("click", (e) => {
         e.preventDefault();
 
@@ -119,18 +123,21 @@
           };
 
           contactsArr = [...contactsArr, newContact];
+
+          name.value = "";
+          phone.value = "";
         }
       });
 
-      search.addEventListener("keyup", () => {
-        const searchVal = search.value;
+      search.addEventListener("keyup", (e) => {
+        const searchVal = e.target.value.toLowerCase();
 
         let searchedResult = [];
 
-        if (searchVal) {
+        if (searchVal && contactsArr.length) {
           searchedResult = contactsArr.map((item) => {
             if (
-              item.name.includes(searchVal) ||
+              item.name.toLowerCase().includes(searchVal) ||
               item.phone.includes(searchVal)
             ) {
               return item;
@@ -139,12 +146,10 @@
         }
 
         let searchedContactsOutput = "";
-
         if (searchedResult.length) {
           searchedResult.forEach((contact) => {
-            let item = `<li><h4>${contact.name}</h4><p>${contact.phone}<p></li>`;
-
-            searchedContactsOutput += item;
+            console.log(contact);
+            searchedContactsOutput += `<li><h4>${contact.name}</h4><p>${contact.phone}<p></li>`;
           });
         }
 
