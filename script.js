@@ -135,14 +135,11 @@ const app = () => {
         "Type 'mngr' in case you are a manager, and 'nrml' in case a normal employee"
       );
 
-      if (type.toLowerCase() !== "mngr" || type.toLowerCase() !== "nrml") {
-        alert("Wrong input!");
-        app();
-      } else {
+      if (type.toLowerCase() === "mngr" || type.toLowerCase() === "nrml") {
         let name = prompt("What's your name?");
         let email = prompt(" What's your email?");
 
-        new OfficeEmployee(
+        let newEmployee = new OfficeEmployee(
           new Date().valueOf(),
           name,
           email,
@@ -150,6 +147,8 @@ const app = () => {
           "",
           type.toLowerCase() === "mngr" ? true : false
         );
+
+        console.log("New employee added", newEmployee);
 
         // let newEmployee = {
         //   id: new Date().valueOf(),
@@ -163,6 +162,9 @@ const app = () => {
         // ceo.hire(newEmployee);
 
         alert("Welcome on board, " + name + "!");
+      } else {
+        alert("Wrong input!");
+        app();
       }
 
       break;
