@@ -1,0 +1,158 @@
+html {
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+* {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.3;
+}
+
+a {
+  text-decoration: none;
+  color: steelblue;
+}
+
+/* Task 1 */
+.task1 header,
+.task1 footer {
+  background-color: #eee;
+}
+
+.task1 header nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.task1 main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0 1rem;
+}
+
+.task1 main section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  gap: 0.75rem;
+  text-align: center;
+  border: 2px solid #000;
+}
+
+@media screen and (max-width: 799px) {
+  .task1 header nav {
+    flex-direction: column;
+  }
+
+  .task1 main section {
+    flex: 1 0 100%;
+  }
+}
+
+/* Task 2 */
+.task2 {
+  height: 500px;
+  /* display: grid;
+  place-items: center; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.task2 div {
+  background-color: darkolivegreen;
+  color: white;
+  padding: 20px;
+}
+
+/* Task 3 */
+.task3 .grid-container {
+  color: white;
+  display: grid;
+  grid-template-rows: 1fr 7fr 1fr;
+  grid-template-areas:
+    "header header header header"
+    "aside-left main main aside-right"
+    /* "aside-left main main aside-right"
+    "aside-left main main aside-right"
+    "aside-left main main aside-right" */
+    "footer footer footer footer";
+  min-height: 500px;
+}
+
+@media screen and (max-width: 799px) {
+  .task3 .grid-container {
+    grid-template-rows: 1fr 2fr 5fr 2fr 1fr;
+    grid-template-areas:
+      "header"
+      "aside-left"
+      "main"
+      "aside-right"
+      "footer";
+  }
+}
+
+.task3 header {
+  background-color: burlywood;
+  grid-area: header;
+}
+.task3 .aside-left {
+  background-color: chocolate;
+  grid-area: aside-left;
+}
+.task3 main {
+  background-color: teal;
+  grid-area: main;
+}
+.task3 .aside-right {
+  background-color: chocolate;
+  grid-area: aside-right;
+}
+.task3 footer {
+  background-color: burlywood;
+  grid-area: footer;
+}
+
+/* Task 4 */
+.task4 {
+  overflow-x: hidden;
+}
+
+.task4 main {
+  display: grid;
+  padding: 0.75rem;
+  gap: 0.75rem;
+  grid-template-columns: repeat(3, 1fr);
+  /* grid-auto-rows: minmax(150px, auto); */
+  grid-template-rows: repeat(3, minmax(150px, auto));
+  transform: scale(0.6) rotateX(25deg) rotateY(22deg) rotateZ(10deg);
+}
+
+.task4 .div {
+  background-color: blueviolet;
+  color: white;
+  padding: 10px;
+}
+
+.task4 .div1 {
+  grid-row: 1/3;
+}
+.task4 .div2 {
+  grid-column: 2/-1;
+}
+.task4 .div4 {
+  grid-row: 2/-1;
+  grid-column: 3/-1;
+}
+.task4 .div5 {
+  grid-column: 1/3;
+}
