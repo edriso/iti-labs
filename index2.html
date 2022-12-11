@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML5 / CSS3 - Lab 1</title>
+  </head>
+  <body>
+    <div>
+      <p>Red:</p>
+      <input type="range" min="0" max="255" value="255" id="red-color" />
+      <p>Green:</p>
+      <input type="range" min="0" max="255" value="255" id="green-color" />
+      <p>Blue:</p>
+      <input type="range" min="0" max="255" value="255" id="blue-color" />
+
+      <p>
+        Background Color: rgb(<span id="red-val">255</span>,
+        <span id="green-val">255</span>, <span id="blue-val">255</span>)
+      </p>
+    </div>
+
+    <script type="text/javascript">
+      // Variables
+      const red = document.getElementById("red-color");
+      const green = document.getElementById("green-color");
+      const blue = document.getElementById("blue-color");
+      const redVal = document.getElementById("red-val");
+      const greenVal = document.getElementById("green-val");
+      const blueVal = document.getElementById("blue-val");
+
+      // Functions
+      const changeBackgroundColor = () => {
+        redVal.innerText = red.value;
+        greenVal.innerText = green.value;
+        blueVal.innerText = blue.value;
+        document.body.style.backgroundColor = `rgb(${red.value}, ${green.value}, ${blue.value})`;
+      };
+
+      // Event Listeners
+      //   red.addEventListener("change", changeBackgroundColor);
+      red.addEventListener("mousemove", changeBackgroundColor);
+      green.addEventListener("mousemove", changeBackgroundColor);
+      blue.addEventListener("mousemove", changeBackgroundColor);
+    </script>
+  </body>
+</html>

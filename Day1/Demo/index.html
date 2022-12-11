@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Elements in html5</title>
+    <script>
+      window.MathJax = {
+        MathML: { extensions: ["mml3.js", "content-mathml.js"] },
+      };
+    </script>
+    <script
+      type="text/javascript"
+      async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=MML_HTMLorMML"
+    ></script>
+    <style>
+      [data-my-attr]{
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Meter and Progress</h2>
+    <meter min="0" max="100" low="20" high="80" value="10">this elem not supported here</meter>
+    <progress min="0" max="100" value="50"></progress>
+    <hr>
+    <h2>New Elem in Form</h2>
+    <form action="./welcome.html">
+      name : <input type="text" pattern="[A-Za-z]{5}" required  autocomplete="off"><br>
+      password : <input type="password" name="" id=""> <br>
+      email : <input type="email" name="" id="" required> <br>
+      date : <input type="date" name="" id=""> <br>
+      dateTime : <input type="datetime-local" name="" id=""> <br>
+      color : <input type="color" name="" id=""> <br>
+      range : <input type="range" name="" id="" step="1" value="0"> <br>
+      search : <input type="search" name="" id=""> <br>
+      datalist : <input type="text" list="ls1"> <br>
+      <datalist id="ls1">
+            <option value="football"></option>
+            <option value="tennis"></option>
+      </datalist>
+      <button>submit</button>
+    </form>
+     <hr>
+     <h2>Semantic Elements</h2>
+     <nav>navbar</nav>
+     <aside>aside part</aside>
+     <article>article</article>
+     <main>main idea </main>
+     <footer>footer</footer>
+     <figure>img</figure>
+     <details>our details</details>
+     <mark>highlighted words</mark>
+     <section>wrapp gp of elements</section>
+     <code>
+      <var>var x = 10</var>
+     </code>
+    <span>var x = 10</span>
+    <hr>
+    <h2>Data Attribute</h2>
+    <p data-my-attr="g">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus ipsa in ex iure, dolorem quibusdam iste fugit eius accusamus, sequi culpa enim atque obcaecati dolorum ullam amet mollitia minima consequatur.</p>
+    <hr>
+    <h2>Math Ml</h2>
+    <!--& math - root element / mrow -gp of expressions / mo-math operator / mi -math identifier / mfrac - math fraction /msqrt - math square root / msub / msup  -->
+    <math display="block">
+      <mfrac>
+        <mrow>
+          <mi>a</mi>
+          <mo>+</mo>
+          <mn>2</mn>
+        </mrow>
+        <mrow>
+          <mi>b</mi>
+          <mo>-</mo>
+          <mn>3</mn>
+        </mrow>
+      </mfrac>
+    </math>
+    <hr>
+    <h2>Video</h2>
+    <video src="./video/frozen.mp4" width="300" controls id="vid1" poster="./image/frozen.jpg"></video>
+    <hr>
+    <h2>SVG -> Scalable Vector Graphics</h2>
+    <svg width="400" height="400" style="border:2px solid red">
+    <rect x="50" y="50" width="50" height="50" style="fill: blue;stroke:yellow;"/>
+    <line x1="100" y1="100" x2="300" y2="300" style="stroke: blue;"/> 
+    <circle cx="200" cy="50" r="40" style="fill:red"/> 
+    <ellipse cx="300" cy="350" rx="100" ry="50" style="fill:aquamarine" /> 
+    </svg>
+    <hr>
+    <h2>Canvas</h2>
+    <canvas width="400" height="400" style="border:2px solid orange" id="canv"></canvas>
+    <script>
+      // data attribute
+      document.querySelector("[data-my-attr]").onclick = function(){
+        this.style.color = "red"
+      }
+      //video
+      var vid = document.getElementById("vid1");
+      console.log(vid.pause())
+      // console.log(vid.playbackRate = 16) //0.5-16 
+      // console.log(vid.volume = 0) //0-1
+      // console.log(vid.muted = true)
+      vid.addEventListener("timeupdate",function(){
+        console.log(vid.currentTime)
+      })
+      // canvas
+      var canv =  document.getElementById("canv");
+      var ctx = canv.getContext("2d");
+      ctx.beginPath();
+      ctx.moveTo(10,10);
+      ctx.lineTo(150,150);
+      ctx.strokeStyle = "red";
+      ctx.lineWidth = 5;
+      ctx.stroke();
+      ctx.closePath();
+      ctx.beginPath();
+      ctx.fillStyle = "blue";
+      ctx.fillRect(200,200,100,100);
+      ctx.stroke();
+      ctx.closePath();
+      ctx.beginPath();
+      ctx.arc(150,150,50,0,2*Math.PI);
+      ctx.fillStyle = "orange";
+      ctx.fill();
+      ctx.closePath()
+
+
+    </script>
+  </body>
+</html>
