@@ -6,5 +6,144 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HTML5 / CSS3 - Lab 1</title>
   </head>
-  <body></body>
+  <body>
+    <div class="controls">
+      <button id="play">play</button>
+      <button id="stop">stop</button>
+      <button id="back10sec"><<</button>
+      <button id="back5sec"><</button>
+      <button id="forward5sec">></button>
+      <button id="forward10sec">>></button>
+      <input type="range" id="sound" min="0" max="100" value="50" />
+      <button id="mute">mute</button>
+      speed:
+      <input type="range" min=".1" max="2.5" value="1" id="speed" />
+
+      <br />
+
+      <input
+        style="width: 500px"
+        type="range"
+        id="playback"
+        min="0"
+        max="100"
+        value="0"
+      />
+      <span
+        ><span class="playback-current">0:00</span>/
+        <span class="playback-end">0:00</span></span
+      >
+    </div>
+
+    <br />
+
+    <video
+      id="video"
+      width="500"
+      poster="./Day1/Demo/image/frozen.jpg"
+      controls
+      preload="auto"
+    >
+      <source src="./Day1/Demo/video/frozen.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <br />
+    <br />
+    <button id="fullscreen">fullscreen</button>
+
+    <script>
+      const video = document.querySelector("#video");
+      const play = document.querySelector("#play");
+      const stop = document.querySelector("#stop");
+      const back10sec = document.querySelector("#back10sec");
+      const back5sec = document.querySelector("#back5sec");
+      const forward5sec = document.querySelector("#forward5sec");
+      const forward10sec = document.querySelector("#forward10sec");
+      const sound = document.querySelector("#sound");
+      const mute = document.querySelector("#mute");
+      const speed = document.querySelector("#speed");
+      const playback = document.querySelector("#playback");
+      const playbackCurrent = document.querySelector(".playback-current");
+      const playbackEnd = document.querySelector(".playback-end");
+      const fullscreen = document.querySelector("#fullscreen");
+
+      function setDuration(timeInSec) {
+        const min = Math.floor(timeInSec / 60);
+        const sec = Math.floor(timeInSec - min * 60);
+
+        const videoDuration = `${min}:${sec}`;
+
+        return videoDuration;
+      }
+
+      setTimeout(() => {
+        const videoInSec = video.duration;
+
+        playbackEnd.innerText = setDuration(videoInSec);
+
+        playback.setAttribute("max", videoInSec);
+      }, 200);
+
+      playback.addEventListener("change", () => {
+        video.currentTime = playback.value;
+        playbackCurrent.innerText = setDuration(video.currentTime);
+      });
+
+      video.addEventListener("timeupdate", () => {
+        playbackCurrent.innerText = setDuration(video.currentTime);
+        playback.value = video.currentTime;
+      });
+
+      play.addEventListener("click", () => {
+        video.play();
+      });
+
+      stop.addEventListener("click", () => {
+        video.pause();
+        speed.value = 1;
+        video.playbackRate = 1;
+      });
+
+      mute.addEventListener("click", () => {
+        video.muted = !video.muted;
+      });
+
+      speed.addEventListener("change", () => {
+        video.playbackRate = speed.value;
+      });
+
+      sound.addEventListener("change", () => {
+        video.volume = sound.value / 100;
+      });
+
+      forward10sec.addEventListener("click", () => {
+        video.currentTime = video.currentTime + 10;
+      });
+
+      back10sec.addEventListener("click", () => {
+        video.currentTime = video.currentTime - 10;
+      });
+
+      forward5sec.addEventListener("click", () => {
+        video.currentTime = video.currentTime + 5;
+      });
+
+      back5sec.addEventListener("click", () => {
+        video.currentTime = video.currentTime - 5;
+      });
+
+      fullscreen.addEventListener("click", () => {
+        if (video.requestFullscreen) {
+          video.requestFullscreen();
+        } else if (video.webkitRequestFullscreen) {
+          /* Safari */
+          video.webkitRequestFullscreen();
+        } else if (video.msRequestFullscreen) {
+          /* IE11 */
+          video.msRequestFullscreen();
+        }
+      });
+    </script>
+  </body>
 </html>
