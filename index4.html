@@ -26,7 +26,8 @@
         val += 40;
         line.setAttribute("x2", val);
         line.setAttribute("y2", val);
-        if (val >= 600) {
+
+        if (val > 600) {
           clearInterval(animateLine);
           line.setAttribute("x2", 600);
           line.setAttribute("y2", 600);
