@@ -51,6 +51,10 @@
       Sorry, your browser does not support inline SVG.
     </svg>
 
+    <svg width="400" height="400">
+      <polygon points="250,10 120,200, 250,200" style="fill: red"></polygon>
+    </svg>
+
     <br />
     <br />
 
@@ -59,20 +63,26 @@
         <mi>c</mi>
         <mo>=</mo>
         <mrow>
-          <mo>&#8730;</mo>
-          <msup>
-            <mi>a</mi>
-            <mn>2</mn>
-          </msup>
-          <mo>+</mo>
-          <msup>
-            <mi>b</mi>
-            <mn>2</mn>
-          </msup>
+          <msqrt>
+            <msup>
+              <mi>a</mi>
+              <mn>2</mn>
+            </msup>
+            <mo>+</mo>
+            <msup>
+              <mi>b</mi>
+              <mn>2</mn>
+            </msup>
+          </msqrt>
         </mrow>
       </mrow>
     </math>
 
+    <script>
+      window.MathJax = {
+        MathML: { extensions: ["mml3.js", "content-mathml.js"] },
+      };
+    </script>
     <script
       type="text/javascript"
       async
