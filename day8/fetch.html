@@ -1,0 +1,103 @@
+<!--
+let response = fetch(url);
+//The fetch() method returns a Promise so you can use the then() and catch() methods to handle it:
+fetch(url)
+    .then(response => {
+        // handle the response
+    })
+    .catch(error => {
+        // handle the error
+    });
+
+
+  Reading the Response
+  fetch('/readme.txt')
+    .then(response => response.text())
+    .then(data => console.log(data));
+
+    async function fetchText() {
+    let response = await fetch('/readme.txt');
+    let data = await response.text();
+    console.log(data);
+}
+//Handling the status codes of the Response
+async function fetchText() {
+    let response = await fetch('/readme.txt');
+
+    console.log(response.status); // 200
+    console.log(response.statusText); // OK
+
+    if (response.status === 200) {
+        let data = await response.text();
+        // handle data
+    }
+}
+
+fetchText();
+
+ -->
+ <!-- <!DOCTYPE html>
+<html>
+<body>
+<p id="demo">Fetch a file to change this text.</p>
+<script>
+
+let url = "https://dummyjson.com/carts"
+
+fetch (url)
+.then(x => x.text())
+.then(y => document.getElementById("demo").innerHTML = y);
+
+</script>
+</body>
+</html> -->
+
+ <!-- <!DOCTYPE html>
+<html>
+<body>
+<p id="demo">Fetch a file to change this text.</p>
+
+<script>
+getText("https://dummyjson.com/products");
+
+async function getText(url) {
+  let x = await fetch(url);
+  let y = await x.text();
+  document.getElementById("demo").innerHTML = y;
+}
+</script>
+
+</body>
+</html> -->
+<!-- <!DOCTYPE html>
+<html>
+<body>
+<p id="demo">Fetch a file to change this text.</p>
+
+<script>
+getText("https://jsonplaceholder.typicode.com/posts");
+
+async function getText(file) {
+  let myObject = await fetch(file);
+  let myText = await myObject.text();
+  document.getElementById("demo").innerHTML = myText;
+}
+</script>
+
+</body>
+</html> -->
+
+
+ <!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API Demo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container"></div>
+    <script src="js/app.js"></script>
+</body>
+</html> -->

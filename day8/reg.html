@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+      // 2 way to create regex
+      // var regex = /^Mr\./
+      //
+      // var regex = new RegExp("^Mr\\.")
+      // var regex = /ca[kf]e/; // cafe, cake
+      // var str = 'He was eating cake in the cafe.';
+      // if (regex.test(str)){
+      //   alert('Match Found')
+      // }else
+      // {
+      //     alert('Match not found')
+      // }
+
+
+      // var regex = /ca[kf]e/g; // cafe, cake
+      // var str = 'He was eating cake in the cafe.';
+      // var match = str.match(regex)
+      // alert(match.length)
+      // alert(match)
+      // var regex = /\s/g;
+      // var replacement = "-";
+      // var str = "Earth revolves around\nthe\tsun";
+      // document.write(str.replace(regex, replacement) + "<hr>")
+      // document.write(str.replace(/ /g, replacement) + "<hr>")
+
+      // var regex = /[\s,]+/
+      // var str = "My favourite colors are red, green, and blue"
+      // var parts = str.split(regex)
+      // for (var part of parts){
+      //   document.write("<p>" + part + "</p>")
+      // }
+
+      // var regex = /^J/;
+      // var names = ["James Bond", "Clark Kent", "John Rambo"]
+      // for (name of names){
+      //   if (regex.test(name)){
+      //     document.write("<p>" + name + "</p>")
+      //   }
+      // }
+
+      // var regex = /color/gi;
+      // var str = "Color red is more visible then color blue in daylight";
+      // var matches = str.match(regex)
+      // console.log(matches);
+      // var regex = /^color/gim;
+      // var str = "Color red is more visible then \ncolor blune in daylight";
+      // console.log(str);
+      // var matches = str.match(regex)
+      // console.log(matches);
+      // var regex = /fox|dog|cat/
+      // var str = "The quick brown fox jumps over the lazy dog."
+      // var matches = str.match(regex)
+      // console.log(matches);
+
+      // var regex = /(go)+/i;
+      // // var regex = /go+/i;
+      // var str = "One day Gogo will go to shcool"
+      // var matches = str.match(regex)
+      // console.log(matches);
+      // word boundaries
+      // /\bcar/
+      // /car\b/
+      // /\bcar\b/
+      var regex = /(\bcar\w*)/g;
+      var str = "Words begining with car: cart, carrot, cartoon. words ending with car: oscar, supercar.";
+      var replacement = "<b> $1 </b>"
+      var result = str.replace(regex, replacement)
+      document.write(result)
+      // console.log(result);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,148 @@
+<!-- Performing an Ajax GET Request -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+      // Asynchronous, synchronous
+      // Asynchronous
+
+      //Create XMLHttpRequest:
+      //let xhr = new XMLHttpRequest();
+      //Initialize it, usually right after new XMLHttpRequest:
+      //xhr.open(method, URL, [async, user, password])
+      //Send it out.
+      //xhr.send([body])
+
+      // xhr.onload = function(){
+      //   alert(`Loaded: ${xhr.status} ${xhr.response}` )
+      // }
+      // xhr.onerror = function(event){
+      //   alert('Network error')
+      // }
+      //
+      // xhr.onprogress = function(event){
+      //   //event.loaded - how many bytes downloaded
+      //   //event.lengthComputable = true if the server sent content-length header
+      //   // event.total - total number of bytes ( if lengthComputable)
+      //   alert(`received ${event.loaded} of ${event.total}`)
+      // }
+      //
+      // //
+      // let xhr = new XMLHttpRequest();
+      //
+      // xhr.open('GEt', '')
+      // xhr.send()
+      //
+      // xhr.onload = function(){
+      //   if(xhr.status != 200){
+      //     alert(`Error ${xhr.status}: ${xhr.statusText}`);
+      //   }else{
+      //     alert(`Done, got ${xhr.response.length} bytes`)
+      //   }
+      // }
+      // xhr.onerror =  function(){
+      //   alert('Request Failed')
+      // }
+      // // URL search param
+      // let url = new URL('https://google.com/search')
+      // url.searchParams.set('q', 'test me!')
+      // xhr.open('GET', url)
+      //
+      //
+      // // synchronous
+      // let xhr = new XMLHttpRequest()
+      // xhr.open('GET', url, false)
+      //
+      // try{
+      //   xhr.send();
+      //   if(xhr.status != 200){
+      //     alert(`Error ${xhr.status}: ${xhr.statusText}`)
+      //   }else{
+      //     aler(xhr.response)
+      //   }
+      // }catch (error){
+      //   alert('Request failed')
+      // }
+      //
+      // // promise
+      // let promise = new Promise(function(resolve, reject){
+      //   // the function executed automatically when the promise is constructed
+      //
+      //   //after 1 second signal that the job is done with the result "done"
+      //   setTimeout(function(){ resolve('done')}, 1000)
+      // })
+      //
+      // let promise = new Promise(function(resolve, reject){
+      //   //after 1 second signal that the job is finished with an error
+      //   setTimeout(function(){ reject(new Erorr('Whoops!'))}, 1000)
+      // })
+      // // consumer : then, catch, finally
+      // new Promise((resolve, reject)=>{
+      //   /*do something that takes time, and then call resolve/ reject */
+      // })
+      // // runs when the promise is setlled, doesn't matter successfully or not
+      // .finally(()=> stop loading indicator)
+      // .then(result=>  show result, err => show error)
+      //
+      //
+      // let promise = new Promise((resolve, reject)=>{
+      //   setTimeout(()=> resolve("done"), 1000)
+      // })
+      // promise.then(
+      // result=> alert(result)
+      // error => (error)
+      // )
+      //
+      // // Async
+      // async function f(){
+      //   return 1
+      // }
+      // f().then(alert)
+      //
+      // //await
+      // async function f(){
+      //   let promise = new Promise((resolve, reject)=>{
+      //     setTimeout(()=> resolve("Done"), 1000)
+      //   })
+      //
+      //   let result = await Promise;
+      //   alert(result)
+      // }
+      // f()
+      // // fetch
+      // let promise = fetch(url, [option])
+      //
+      // let response = await fetch(url)
+      // if(response.ok){
+      //   let json = await response.json()
+      // }else{
+      //   alert('HTTp-Error: '+ response.status)
+      // }
+      // // witout await
+      // fetch('url')
+      // .then(response => response.json())
+      // .then(commits => alert(commits[0].author.login))
+      //
+      // // post Request
+      // let user = {
+      //   name: 'iti',
+      //   surname: '.net'
+      // }
+      // let response = await fetch(url, {
+      //   method: 'POST',
+      //   headers:{
+      //     'Content-Type': 'application/json;charset=utf-8'
+      //   },
+      //   body: JSON.stringify(user)
+      // })
+      // let result = await response.json()
+      // alert(resul.message)
+
+      // promise, await, async
+    </script>
+  </body>
+</html>

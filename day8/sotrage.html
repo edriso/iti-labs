@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <!-- <body onload="checkCookie()"> -->
+    <body>
+<!-- <p><button onclick="clickCounter()" type="button">Click me!</button></p>
+
+<p>Number of clicks:</p>
+<p id="demo"></p> -->
+<!-- session -->
+<p>Person Name is:</p>
+<p id="demo"></p>
+
+    <script>
+       // cookies
+       // document.cookie = "firstName=ITI"
+       // document.cookie = "name="+ encodeURIComponent("Ahmed ITI")
+       // decodeURIComponent()
+       // documet.cookie = "firstName=ITI; max-age=" + 0*30*24*60*60
+       // documet.cookie = "firstName=ITI; expires=Thu, 31 Dec 2099 23:59:59 GMT"
+       // documet.cookie = "firstName=ITI; path=/profile; domain=example.com secure"
+    //
+    //    function setCookie(name, value, daysToLive) {
+    //      // Encode value in order to escape semicolons, commas, and whitespace
+    //      var cookie = name + "=" + encodeURIComponent(value);
+    //      if(typeof daysToLive === "number") {
+    //     /* Sets the max-age attribute so that the cookie expires
+    //     after the specified number of days */
+    //       cookie += "; max-age=" + (daysToLive*24*60*60);
+    //       document.cookie = cookie;
+    //       }
+    //   }
+    // // //     //Reading a Cookie
+    //     function getCookie(name) {
+    //       // Split cookie string and get all individual name=value pairs in an array
+    //       var cookieArr = document.cookie.split(";");
+    //       // Loop through the array elements
+    //       for(var i = 0; i < cookieArr.length; i++) {
+    //           var cookiePair = cookieArr[i].split("=");
+    //           /* Removing whitespace at the beginning of the
+    //     cookie name
+    //           and compare it with the given string */
+    //           if(name == cookiePair[0].trim()) {
+    //     // Decode the cookie value and return
+    //               return decodeURIComponent(cookiePair[1]);
+    //           }
+    //     }
+    //       // Return null if not found
+    //       return null;
+    //     }
+    // // //     // check cookies
+    //     function checkCookie() {
+    // // Get cookie using our custom function
+    //         var firstName = getCookie("firstName");
+    //         if(firstName != "" && firstName != null) {
+    //             alert("Welcome again, " + firstName);
+    //         } else {
+    //             firstName = prompt("Please enter your first name:");
+    //             if(firstName != "" && firstName != null) {
+    //                 // Set cookie using our custom function
+    //                 setCookie("firstName", firstName, 30);
+    //     }
+    //   }
+    //     }
+    //     //Updating a Cookie
+    //     // Creating a cookie
+        // document.cookie = "firstName=Christopher; path=/; max-age="+ 30*24*60*60;
+    // //     // Updating the cookie
+        // document.cookie = "firstName=Alexander; path=/; max-age=" + 365*24*60*60;
+    // //     //Deleting a Cookie
+    // //     // Deleting a cookie
+        // document.cookie = "firstName=; max-age=0";
+    // //     // Specifying path and domain while deleting cookie
+        // document.cookie = "firstName=; path=/; domain=example.com;max-age=0";
+
+        // all together
+
+      // function setCookie(cname,cvalue,exdays) {
+      //   const d = new Date();
+      //   d.setTime(d.getTime() + (exdays*24*60*60*1000));
+      //   let expires = "expires=" + d.toUTCString();
+      //   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+      // }
+      //
+      // function getCookie(cname) {
+      //   let name = cname + "=";
+      //   let decodedCookie = decodeURIComponent(document.cookie);
+      //   let ca = decodedCookie.split(';');
+      //   for(let i = 0; i < ca.length; i++) {
+      //     let c = ca[i];
+      //     while (c.charAt(0) == ' ') {
+      //       c = c.substring(1);
+      //     }
+      //
+      //     if (c.indexOf(name) == 0) {
+      //       return c.substring(name.length, c.length);
+      //     }
+      //   }
+      //   return "";
+      // }
+      //
+      // function checkCookie() {
+      //   let user = getCookie("username");
+      //   if (user != "") {
+      //     alert("Welcome again " + user);
+      //   } else {
+      //      user = prompt("Please enter your name:","");
+      //      if (user != "" && user != null) {
+      //        setCookie("username", user, 30);
+      //      }
+      //   }
+      // }
+
+    //    // session
+       // sessionStorage.setItem("lastname", "Smith");
+       // sessionStorage.getItem("lastname");
+    // //
+       // sessionStorage.setItem("lastname", "Smith");
+       // let personName = sessionStorage.getItem("lastname");
+       // document.getElementById("demo").innerHTML = personName;
+    //
+    //      window.sessionStorage
+    //      // Or
+    //     sessionStorage
+    //     //Save Data to Session Storage
+        // sessionStorage.setItem("key", "value");
+    // //     //Read Data from Session Storage
+        // let lastname = sessionStorage.getItem("key");
+    // //     //Remove Data from Session Storage
+        // sessionStorage.removeItem("key");
+    // //     //Remove All (Clear session Storage)
+    //     sessionStorage.clear();
+    //   //localstorage
+    // //  The localStorage object allows you to save key/value pairs in the browser.
+    // localStorage.setItem("lastname", "ahmed");
+    // var personName = localStorage.getItem("lastname");
+    // document.getElementById("demo").innerHTML = personName;
+
+    // // //Save Data to Local Storage
+    // //  localStorage.setItem(key, value);
+    // //  //Read Data from Local Storage
+    //   let lastname = localStorage.getItem(key);
+    // //   //Remove Data from Local Storage
+       // localStorage.removeItem(key);
+    // // //    //Remove All (Clear Local Storage)
+        // localStorage.clear();
+
+        /*
+        clickCounter();
+
+function clickCounter() {
+  if (localStorage.clickcount) {
+    localStorage.clickcount = Number(localStorage.clickcount)+1;
+  } else {
+    localStorage.clickcount = 1;
+  }
+  document.getElementById("demo").innerHTML = localStorage.clickcount;
+}
+*/
+
+
+// Note
+//
+// The sessionStorage object stores data for only one session.
+//
+// (The data is deleted when the browser is closed).
+// See Also:
+//
+// The localStorage Object which stores data with no expiration date.
+//
+// (The data is not deleted when the browser is closed, and are available in future sessions).
+
+    </script>
+  </body>
+</html>
+
+<!-- session -->
+<!-- <!DOCTYPE html>
+<html>
+<body>
+
+<h1>The Window Object</h1>
+<h2>The sessionStorage Object</h2>
+
+<p>A Counter:</p>
+<p id="demo">0</p>
+
+<p><button onclick="clickCounter()" type="button">Count</button></p>
+
+<p>Click to see the counter increase.</p>
+<p>Close the browser tab (or window), and try again, and the counter is reset.</p>
+
+
+<script>
+function clickCounter() {
+  if (sessionStorage.clickcount) {
+    sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
+  } else {
+    sessionStorage.clickcount = 1;
+    }
+  document.getElementById("demo").innerHTML = sessionStorage.clickcount;
+}
+</script>
+
+</body>
+</html> -->

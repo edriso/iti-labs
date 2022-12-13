@@ -1,0 +1,174 @@
+<!-- Example
+async function myFunction() {
+  return "Hello";
+}
+
+Is the same as:
+function myFunction() {
+  return Promise.resolve("Hello");
+}
+
+Here is how to use the Promise:
+myFunction().then(
+  function(value) { /* code if successful */ },
+  function(error) { /* code if some error */ }
+);
+-->
+
+<!-- <!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript async / await</h2>
+
+<p id="demo"></p>
+
+<script>
+function myDisplayer(some) {
+  document.getElementById("demo").innerHTML = some;
+}
+
+async function myFunction() {
+  return "Hello";
+}
+
+myFunction().then(
+  function(value) {myDisplayer(value);},
+  function(error) {myDisplayer(error);}
+);</script>
+
+</body>
+</html> -->
+
+<!--
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript async / await</h2>
+
+<p id="demo"></p>
+
+<script>
+function myDisplayer(some) {
+  document.getElementById("demo").innerHTML = some;
+}
+
+async function myFunction() {return "Hello";}
+
+myFunction().then(
+  function(value) {myDisplayer(value);}
+);
+</script>
+
+</body>
+</html> -->
+
+<!-- Await Syntax -->
+<!--
+let value = await promise;
+The await keyword can only be used inside an async function.
+ -->
+<!--
+ <!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript async / await</h2>
+
+<h1 id="demo"></h1>
+
+<script>
+async function myDisplay() {
+  let myPromise = new Promise(function(resolve, reject) {
+    resolve("I love You !!");
+  });
+  document.getElementById("demo").innerHTML = await myPromise;
+}
+
+myDisplay();
+</script>
+
+</body>
+</html> -->
+
+<!-- Example without reject -->
+
+<!-- <!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript async / await</h2>
+
+<h1 id="demo"></h1>
+
+<script>
+async function myDisplay() {
+  let myPromise = new Promise(function(resolve) {
+    resolve("ITI !!");
+  });
+  document.getElementById("demo").innerHTML = await myPromise;
+}
+
+myDisplay();
+</script>
+
+</body>
+</html> -->
+
+<!-- Waiting for a Timeout -->
+
+<!-- <!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript async / await</h2>
+
+<p>Wait 3 seconds (3000 milliseconds) for this page to change.</p>
+
+<h1 id="demo"></h1>
+
+<script>
+async function myDisplay() {
+  let myPromise = new Promise(function(resolve) {
+    setTimeout(function() {resolve("ITI !!");}, 3000);
+  });
+  document.getElementById("demo").innerHTML = await myPromise;
+}
+
+myDisplay();
+</script>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript async / await</h2>
+
+<p id="demo"></p>
+
+<script>
+async function getFile() {
+  let myPromise = new Promise(function(resolve) {
+    let req = new XMLHttpRequest();
+    req.open('GET', "https://dummyjson.com/carts");
+    req.onload = function() {
+      if (req.status == 200) {
+        resolve(req.response);
+      } else {
+        resolve("File not Found");
+      }
+    };
+    req.send();
+  });
+  document.getElementById("demo").innerHTML = await myPromise;
+}
+
+getFile();
+</script>
+
+</body>
+</html>
