@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      nav{
+        background-color: aqua;
+      }
+      aside{
+        background-color: blueviolet;
+        height: 500px;
+        width: 30%;
+        float: left;
+      }
+      article{
+        background-color: blanchedalmond;
+        height: 600px;
+        width: 70%;
+        float: right;
+      }
+      footer{
+        background-color: aqua;
+        clear: both;
+      }
+      section{
+        border: 2px solid blue;
+        /* overflow: auto; */
+      }
+      section::after{
+        display: block;
+        content: "this is the content";
+        clear: both;
+      }
+      img{
+        float: right;
+      }
+
+    </style>
+  </head>
+  <body>
+    <nav>nav</nav>
+    <aside>aside</aside>
+    <article>article</article>
+    <footer>footer</footer>
+<br>
+<br>
+<hr>
+<br>
+    <section>
+      <img src="./img.jpg" alt="">
+      <img src="./img.jpg" alt="">
+    </section>
+  </body>
+</html>

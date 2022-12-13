@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Rubik+Gemstones&display=swap" rel="stylesheet"> -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Rubik+Gemstones&display=swap');
+      /* body{
+        background-color: aqua;
+      } */
+      /* Selectors Types
+      *Simple_Selector ==> id / class / TagName 
+      *Compinators ==> > /   / + / ~
+      *psudoClass ==> :
+      *pseudoElemet ==> ::
+      *attribute ==> []
+      // css specifity 
+      inline >id >class == attribut == psuedoclass > psuedoelement  
+      */
+      /* 
+      fonts ==>  
+      otf "openType file"
+      ttf "true type file"
+      woff "web open font format"
+      woff2 "compressed"
+      eot "embedded open type font "
+      */
+      div>p{
+        color: red;
+      }
+      div p{
+        color: green;
+      }
+      div+p{
+        color: blue;
+      }
+      div~p{
+        color: orange;
+      }
+      .psudo{
+        word-break: break-all;
+        text-indent: 30px;
+        /* white-space: pre; */
+      }
+      .psudo:hover{
+        color: aqua;
+      }
+      .psudo::selection{
+        background-color: yellow;
+      }
+      .psudo::first-letter{
+        font-size: 50px;
+        color: red;
+      }
+      .psudo::first-line{
+        background-color: rgb(29, 98, 158);
+      }
+      input:valid{
+        border: 5px solid green;
+      }
+      input:focus{
+        width: 200px;
+        border: 3px solid blue;
+      }
+     
+      input:invalid{
+        border: 5px solid red;
+      }
+      input[type="text"]{
+        border: 5px solid orange;
+      }
+      input::placeholder{
+        /* font-size: 30px; */
+        color: red;
+      }
+      @font-face{
+        font-family: "myFont";
+        src: url("Rubik_80s_Fade/Rubik80sFade-Regular.ttf");
+      }
+      .font{
+        /* font-family:; */
+        /* font-family: 'Rubik Gemstones', cursive; */
+        font-size: 30px;
+        font-family: myFont;
+      }
+      /* vendor-extension-prefixes
+      -moz- : mozilla
+      -ms- : edge
+      -o- :opera
+      -webkit- : chrome & safari
+      http://expressprefixr.herokuapp.com
+      font-moz-family : 
+      */
+      /* .img1{
+        position: relative;
+        top: 100px;
+        left: 50px;
+        z-index: 100;
+      }
+      .img2{
+        position: relative;
+        top: 120px;
+        right: 90px;
+      } */
+      img+div{
+        border: 3px solid red;
+        width: 300px;
+        height: 200px;
+        overflow: hidden;
+      }
+      h2{
+        text-shadow: 5px 5px 10px red;
+      }
+      h2+div{
+        width: 100px;
+        height: 100px;
+        border: 2px blue solid;
+        box-shadow: 10px 10px 20px rgb(85, 10, 156);
+        border-radius: 50%;
+        animation-name: myAnim;
+        animation-duration: 5s;
+        animation-delay: 1s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: ease-in-out;
+        position: relative;
+      }
+      /* online tutorials==> youtube
+      cssfont stack 
+      */
+      @keyframes myAnim{
+        0%{
+          left: 5px;
+          background-color: aquamarine;
+        }
+        25%{
+          opacity: 0.5;
+        }
+        50%{
+          border-radius: 20px;
+          background-color: red;
+        }
+        100%{
+          left: 300px;
+        }
+      }
+      h3{
+        transition: 5s all;
+      }
+      h3:hover{
+           background-color: black;
+           color: white;
+          
+      }
+      h3+img{
+        transition: 5s all;
+      }
+      h3+img:hover{
+        transform: translate(50px,50px) rotate(180deg) scale(2,2) skew(120deg);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ^ compinators -->
+    <div>
+      <p>text1</p>
+      <p>yext2</p>
+      <p>text3</p>
+      <section>
+        <p>text4</p>
+      </section>
+    </div>
+    <p>txt5</p>
+    <p>txt6</p>
+    <h3>txt7</h3>
+    <!-- ^ psuedoclass -->
+    <div class="psudo">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti, exercitationem! Vel, iste eaque saepe eligendi facilis nobis quisquam ducimus distinctio velit itaque deleniti assumenda veniam. Tempore facilis ipsum qui necessitatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, unde excepturi. Iure magnam tempore enim architecto, eum ad aspernatur vel reiciendis, quisquam voluptatum cumque consequatur modi praesentium doloremque eos laboriosam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo sit blanditiis, quod cumque eligendi animi placeat facilis deserunt rerum alias excepturi a in, iste sed quas dolorem vel eaque ad.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quis quasi soluta quo quidem obcaecati cum tempora, error ipsa? Consectetur atque nemo aut ab est, quidem et nobis exercitationem debitis.
+    </div>
+    <input type="email">
+    <!-- ^ attribute  -->
+    <input type="text" placeholder="plz enter your name">
+    <!-- & fonts -->
+    <div class="font">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui pariatur accusamus dicta tempora quis tempore nobis earum accusantium laudantium rerum! Recusandae labore consectetur voluptatem, minus nam veniam mollitia aspernatur perferendis.</div>
+   <!-- & z-index -->
+   <img src="./1.gif" alt="" class="img1">
+   <img src="./2.gif" alt="" class="img2">
+   <div>
+    <img src="./overflow.jpg" alt="">
+   </div>
+   <hr>
+   <h2>text</h2>
+   <div></div>
+   <hr>
+   <h3>text</h3>
+   <img src="./newProp.jpg" alt="" width="150px">
+  </body>
+</html>
