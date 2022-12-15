@@ -114,7 +114,7 @@
 
     <script>
       const stopBtn = $(".task1 button");
-      stopBtn.css({ marginTop: "1rem" });
+      stopBtn.css({ margin: "1rem 0", padding: ".75rem 3rem" });
       $(".task1 h2").css({ color: "brown" });
 
       function changeImg() {
@@ -133,7 +133,7 @@
       stopBtn.on("click", () => {
         if (stopBtn.text() === "Stop") {
           clearInterval(slider);
-          stopBtn.text("Play again!");
+          stopBtn.text("Play!");
         } else {
           slider = setInterval(changeImg, 100);
           stopBtn.text("Stop");
