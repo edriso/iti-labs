@@ -28,10 +28,6 @@
         display: none;
       }
 
-      .task1 img.active {
-        display: block;
-      }
-
       .task1 button {
         padding: 0.75rem 2rem;
         cursor: pointer;
@@ -61,7 +57,7 @@
       <h2>Pick a photo</h2>
 
       <div class="img-wrapper">
-        <img class="active" src="./day1/Tasks/1.jpg" alt="iceman" />
+        <img src="./day1/Tasks/1.jpg" alt="iceman" />
         <img src="./day1/Tasks/3.jpg" alt="iceman" />
         <img src="./day1/Tasks/4.jpg" alt="iceman" />
         <img src="./day1/Tasks/5.jpg" alt="iceman" />
@@ -117,15 +113,16 @@
       stopBtn.css({ margin: "1rem 0", padding: ".75rem 3rem" });
       $(".task1 h2").css({ color: "brown" });
 
+      $(".img-wrapper img:gt(0)").hide();
+
       function changeImg() {
-        const activeImg = $(".task1 img.active");
-        //   check if last element
-        if (activeImg.index() == activeImg.siblings().length) {
-          $(".task1 img").first().addClass("active");
-        } else {
-          activeImg.next().addClass("active");
-        }
-        activeImg.removeClass("active");
+        $(".img-wrapper img:first")
+          //   .fadeOut(100)
+          .hide()
+          .next()
+          .fadeIn(100)
+          .end()
+          .appendTo(".img-wrapper");
       }
 
       let slider = setInterval(changeImg, 100);
