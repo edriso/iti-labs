@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./jQuery-P.js"></script>
+    <script src="./jquery-ui.min.js"></script>
+  </head>
+  <body>
+    <input type="text">
+    <button>get value</button>
+    <hr>
+    <ul>
+      <li>html</li>
+      <li>css</li>
+      <li>js</li>
+    </ul>
+    <button>change</button>
+    <hr>
+    <div style="width: 100px; height: 100px;border: 3px solid red;"></div>
+    <button>add element</button>
+    <hr>
+    <img src="./images//1.jpg" alt="">
+    <hr>
+    <img src="./images/dd.png" alt="">
+    <button>shake</button>
+    <!-- <script
+      src="https://code.jquery.com/jquery-3.6.1.js"
+      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+      crossorigin="anonymous"
+    ></script> -->
+    <script>
+      $("input+button").on('click',function(){
+        var inpVal = $("input").val();
+        console.log(inpVal)
+      })
+      /////////////////////////////////////////////////
+      $("ul+button").on("click",function(){
+        $("li").each(function(i,elem){
+                console.log(i);
+                console.log(elem);
+                $(elem).text("jquery")
+        })
+      })
+      ////////////////////////////////////////////////////
+      $("div").on("click","button",{name:"ali"},function(e){
+        console.log(e.data.name)
+        console.log("done")
+      })
+      $("div+button").on("click",function(){
+        $("div").append("<button>abc</button>")
+      })
+      ///////////////////////////////////////////
+      $("img").draggable()
+      //////////////////////////////////
+      $("img+button").on("click",function(){
+        $("hr+img").effect("scale",{percent:90})
+      })
+    </script>
+  </body>
+</html>
