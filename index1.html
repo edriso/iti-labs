@@ -16,10 +16,35 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <style>
+      .task1 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 7rem 2rem 1rem;
+      }
+
+      .rabbit {
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body>
-    <section class="task1"></section>
+    <section class="task1">
+      <img
+        src="./black hole.JPG"
+        alt="blackhole"
+        width="300"
+        class="black-hole"
+      />
 
-    <script type="text/javascript"></script>
+      <img src="./rabbit.jpg" alt="rabbit" width="150" class="rabbit" />
+    </section>
+
+    <script type="text/javascript">
+      $(".black-hole").on("mouseenter", () => $(".rabbit").remove());
+
+      $(".rabbit").draggable({ revert: true });
+    </script>
   </body>
 </html>

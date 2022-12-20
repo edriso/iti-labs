@@ -10,10 +10,70 @@
       integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA="
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <section class="task2"></section>
+  <body class="bg-violet-100">
+    <section class="task2 mt-16 mx-auto" style="width: 400px">
+      <h2 class="my-2 text-violet-900 text-center">My To-do List</h2>
+      <form>
+        <input
+          type="text"
+          class="todo-input block w-full text-md py-2 px-4 rounded-lg placeholder-white bg-violet-300 focus:bg-violet-400 focus:text-gray-100 focus:outline-none"
+          placeholder="What are you up to?"
+          autofocus
+        />
+      </form>
 
-    <script type="text/javascript"></script>
+      <ul class="todos mt-5">
+        <!-- <li class="bg-white mt-3 flex justify-between px-3 py-2 rounded-lg">
+          <p>${todo}</p>
+          <button class="delete-btn rounded-full text-rose-700">delete</button>
+        </li> -->
+      </ul>
+
+      <p class="no-todos text-center text-gray-500">No todos yet!</p>
+    </section>
+
+    <script type="text/javascript">
+      // toggle no-todos
+      const toggleNoTodos = () => {
+        if ($(".todos li").length) {
+          $(".no-todos").addClass("hidden");
+        } else {
+          $(".no-todos").removeClass("hidden");
+        }
+      };
+
+      // handle submit
+      $("form").on("submit", (e) => {
+        e.preventDefault();
+
+        if ($(".todo-input").val().trim()) {
+          $(".todo-input").removeClass(
+            "border-2 border-red-400 focus:bg-gray-100 focus:text-gray-800 placeholder-gray-500"
+          );
+
+          const todo = $(".todo-input").val();
+          const todoItem = `<li class='bg-white mt-3 flex justify-between px-3 py-2 rounded-lg'><p>${todo}</p> <button class='delete-btn rounded-full text-rose-700'>delete</button></li>`;
+          $(".todo-input").val("");
+          $(".todos").append(todoItem);
+
+          $(".no-todos").addClass("hidden");
+        } else {
+          $(".todo-input").addClass(
+            "border-2 border-red-400 focus:bg-gray-100 focus:text-gray-800 placeholder-gray-500"
+          );
+        }
+      });
+
+      // handle delete
+      $(".todos").on("click", (e) => {
+        if (e.target.classList.contains("delete-btn")) {
+          $(e.target).parent("li").remove();
+
+          toggleNoTodos();
+        }
+      });
+    </script>
   </body>
 </html>
