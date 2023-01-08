@@ -1,0 +1,7 @@
+Lab4 Activities:
+	
+- install php version 8
+	
+- create small script to write date and time and weather https://openweathermap.org/current to a log file every 60 seconds 
+	
+- using logrotate; rotate the log file when size reaches 30K for max 3 log files 
