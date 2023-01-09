@@ -1,3 +1,8 @@
-# iti-labs
+# Nodejs
 
-### Thanks for checking my lab works! There's a branch for each lab.
+---
+
+**Practicing on:**
+
+- routing with both nodejs, and express
+- bodyParser, and reading form data with a post request
