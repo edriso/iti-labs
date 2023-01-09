@@ -32,7 +32,6 @@ server.listen(3000, () => console.log("Server is up on port 3000"));
 // Part 2
 const express = require("express");
 const app = express();
-// app.use(express.json());
 app.use(express.urlencoded());
 
 app.get("/signup", (req, res) => {
@@ -40,8 +39,7 @@ app.get("/signup", (req, res) => {
 });
 
 app.post("/signup", (req, res) => {
-  const { name, password, email } = req.body;
-
+  const { name, password } = req.body;
   if (password.length < 8) {
     res.write("Password is less than 8 chars");
   } else {
