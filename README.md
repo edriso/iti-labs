@@ -1,7 +1,5 @@
 # Nodejs
 
----
-
 **Practicing on:**
 
 - routing with both nodejs, and express
