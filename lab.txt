@@ -1,0 +1,5 @@
+Lab 5:
+
+- write script to execute the following command ```top -n 1 | grep -A1  PID | tail -n 1 | awk '{print $10}'```
+- using logger command, log the result to mail.info facility	
+- using cron, execute this script every 2 minutes
