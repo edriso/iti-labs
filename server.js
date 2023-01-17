@@ -42,10 +42,10 @@ app.post("/signup", (req, res) => {
   const { name, password } = req.body;
   if (password.length < 8) {
     res.write("Password is less than 8 chars");
+    res.end();
   } else {
     res.send("Welcome on board, " + name + "!");
   }
-  res.end();
 });
 
 app.listen(3001, () => console.log("App is up and running on port 3001"));
