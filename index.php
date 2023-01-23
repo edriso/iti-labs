@@ -52,30 +52,31 @@
         <h3 class="red">* Required field</h3>
         <div>
             <label for="#">Image</label>
-            <input type="file" name="img">
+            <input type="file" name="img" />
         </div>
         <div class="required">
             <label for="#">Name</label>
-            <input type="text" name="name">
+            <input type="text" name="name" value="<?php if(isset($_POST['name'])){echo $_POST['name'];}?>" />
             <?php validate('name'); ?>
         </div>
         <div class="required">
             <label for="#">Email</label>
-            <input type="email" name="email">
+            <input type="email" name="email" value="<?php if(isset($_POST['email'])){echo $_POST['email'];}?>" />
             <?php validate('email'); ?>
         </div>
         <div>
             <label for="#">Group #</label>
-            <input type="text" name="group">
+            <input type="text" name="group" value="<?php if(isset($_POST['group'])){echo $_POST['group'];}?>" />
         </div>
         <div>
             <label for="#">Class Details</label>
-            <textarea name="details" cols="30" rows="5"></textarea>
+            <textarea name="details" cols="30"
+                rows="5"><?php if(isset($_POST['details'])){echo $_POST['details'];}?></textarea>
         </div>
         <div class="required">
             <label for="#">Gender</label>
-            <input type="radio" name="gender" value="female">Female
-            <input type="radio" name="gender" value="male">Male
+            <input type="radio" name="gender" value="female" />Female
+            <input type="radio" name="gender" value="male" />Male
             <?php validate('gender'); ?>
         </div>
         <div>
