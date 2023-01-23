@@ -100,12 +100,13 @@
 
     <section>
         <?php
-        if(isset($_FILES['img']) && empty($_FILES['img'])) {
+        if(isset($_FILES['img'])) {
             $file_name = $_FILES['img']['name'];
             $file_tmp =$_FILES['img']['tmp_name'];
             move_uploaded_file($file_tmp,"images/".$file_name);
-            
-            echo "<img src='./images/$file_name' />";
+            if(!empty($file_name)) {
+                echo "<img src='./images/$file_name' />";
+            }
         }
 
         if(isset($_POST['submit'])) {
