@@ -1,17 +1,31 @@
 <template>
   <div class="home">
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <RegisterStudent @add="addStudent" />
+
+    <Students :students="students" />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import RegisterStudent from "@/components/RegisterStudent.vue";
+import Students from "@/components/Students.vue";
 
 export default {
   name: "HomeView",
   components: {
-    HelloWorld,
+    RegisterStudent,
+    Students,
+  },
+  data() {
+    return {
+      students: [{ name: "Doe", age: 21 }],
+    };
+  },
+  methods: {
+    addStudent(newStudent) {
+      this.students.push(newStudent);
+    },
   },
 };
 </script>

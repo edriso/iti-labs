@@ -1,6 +1,8 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h3 v-for="(student, i) in students" :key="i">
+      {{ student.name }} - {{ student.age }}
+    </h3>
   </div>
 </template>
 
@@ -8,7 +10,7 @@
 export default {
   name: "HelloWorld",
   props: {
-    msg: String,
+    students: Array,
   },
 };
 </script>
