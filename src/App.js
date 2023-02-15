@@ -1,7 +1,25 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import Register from "./pages/Register";
+import Profile from "./pages/Profile";
+import Details from "./pages/Details";
+import Error from "./pages/Error";
+
 function App() {
   return (
     <div className="App">
-      <h3>Hello world!</h3>
+      <Router>
+        <Header />
+
+        <main className="container mt-4">
+          <Routes>
+            <Route path="/" exact element={<Register />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/details/:id" element={<Details />} />
+            <Route path="*" element={<Error />} />
+          </Routes>
+        </main>
+      </Router>
     </div>
   );
 }
