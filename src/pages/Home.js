@@ -1,6 +1,7 @@
-import StudentRegister from "../components/StudentRegister";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import StudentRegister from "../components/StudentRegister";
+import StudentUpdate from "../components/StudentUpdate";
 
 function Home() {
   const [students, setStudents] = useState([
@@ -12,15 +13,39 @@ function Home() {
     },
   ]);
 
+  const [updateStudent, setUpdateStudent] = useState({});
+
   const handleDelete = (id) => {
     const newStudents = students.filter((student) => student.id !== id);
 
     setStudents(newStudents);
   };
 
+  const showUpdate = (student) => {
+    setUpdateStudent(student);
+  };
+
+  const handleUpdate = (UpdatedStudent) => {
+    const newStudents = students.map((student) => {
+      if (student.id === UpdatedStudent.id) {
+        return UpdatedStudent;
+      } else {
+        return student;
+      }
+    });
+
+    setStudents(newStudents);
+
+    setUpdateStudent({});
+  };
+
   return (
     <>
-      <StudentRegister />
+      {updateStudent.id ? (
+        <StudentUpdate student={updateStudent} handleUpdate={handleUpdate} />
+      ) : (
+        <StudentRegister />
+      )}
 
       <hr />
 
@@ -46,7 +71,10 @@ function Home() {
                   <td>{student.age}</td>
                   <td>{student.email}</td>
                   <td>
-                    <button className="btn btn-outline-success btn-sm mx-2">
+                    <button
+                      onClick={() => showUpdate(student)}
+                      className="btn btn-outline-success btn-sm mx-2"
+                    >
                       Update
                     </button>
                     <button

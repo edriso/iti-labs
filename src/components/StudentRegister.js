@@ -115,7 +115,7 @@ function Register() {
 
         <button
           type="submit"
-          className="btn btn-primary"
+          className="btn btn-outline-primary"
           onClick={handleSubmit}
         >
           Submit
