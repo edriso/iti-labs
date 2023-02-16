@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Register() {
+function StudentRegister({ handleAddStudent }) {
   const [newStudent, setNewStudent] = useState({
     name: "",
     age: "",
@@ -38,6 +38,8 @@ function Register() {
     setEmailError(false);
 
     newStudent.id = new Date().valueOf();
+
+    handleAddStudent(newStudent);
 
     alert(`Welcome on board, ${newStudent.name}!`);
 
@@ -125,4 +127,4 @@ function Register() {
   );
 }
 
-export default Register;
+export default StudentRegister;

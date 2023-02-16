@@ -38,12 +38,18 @@ function Home() {
     setUpdateStudent({});
   };
 
+  const handleAddStudent = (student) => {
+    const newStudents = [...students, student];
+
+    setStudents(newStudents);
+  };
+
   return (
     <>
       {updateStudent.id ? (
         <StudentUpdate student={updateStudent} handleUpdate={handleUpdate} />
       ) : (
-        <StudentRegister />
+        <StudentRegister handleAddStudent={handleAddStudent} />
       )}
 
       <hr />
