@@ -46,11 +46,9 @@ function Home() {
                   <td>{student.age}</td>
                   <td>{student.email}</td>
                   <td>
-                    <Link to={`/students/${student.id}`}>
-                      <button className="btn btn-outline-success btn-sm mx-2">
-                        Update
-                      </button>
-                    </Link>
+                    <button className="btn btn-outline-success btn-sm mx-2">
+                      Update
+                    </button>
                     <button
                       className="btn btn-outline-danger btn-sm"
                       onClick={() => handleDelete(student.id)}

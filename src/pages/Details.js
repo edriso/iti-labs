@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 
-function StudentUpdate() {
+function Details() {
   const { id } = useParams();
 
   return (
@@ -13,4 +13,4 @@ function StudentUpdate() {
   );
 }
 
-export default StudentUpdate;
+export default Details;
