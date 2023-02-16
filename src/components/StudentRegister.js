@@ -48,12 +48,7 @@ function Register() {
 
   return (
     <>
-      <h2>Register</h2>
-
-      <p>
-        name: {newStudent.name} - age: {newStudent.age}- email:{" "}
-        {newStudent.email}
-      </p>
+      <h4>Add new student</h4>
 
       <form className="mt-4">
         <div className="mb-3">

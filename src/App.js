@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-import Register from "./pages/Register";
+import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Details from "./pages/Details";
 import Error from "./pages/Error";
@@ -13,7 +13,7 @@ function App() {
 
         <main className="container mt-4">
           <Routes>
-            <Route path="/" exact element={<Register />} />
+            <Route path="/" exact element={<Home />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/details/:id" element={<Details />} />
             <Route path="*" element={<Error />} />
