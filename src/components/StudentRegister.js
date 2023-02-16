@@ -37,6 +37,8 @@ function Register() {
     }
     setEmailError(false);
 
+    newStudent.id = new Date().valueOf();
+
     alert(`Welcome on board, ${newStudent.name}!`);
 
     setNewStudent({
