@@ -4,6 +4,8 @@ Thanks for checking my lab works! There's a branch for each lab.
 
 #### 5 Stars Courses Evaluation Code:
 
+I used this code to quickly evalute the long and time consuming courses evaluation
+
 ```javascript
 document.querySelectorAll('tr > td > div > input[type="hidden"]').forEach(elm => {
    elm.setAttribute('value', '5');
